@@ -27,7 +27,7 @@ airflow:
       pool_slot:
       pool_description:
   variables:
-    - variable_name: dag_number
+    - variable_name: task_number
       variable_value: 3
     - variable_name: dag_config
       variable_value: "{}"

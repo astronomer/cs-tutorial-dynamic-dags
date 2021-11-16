@@ -21,7 +21,7 @@ def create_dag(dag_id, schedule, sql_query, default_args):
         )
 
         with TaskGroup('dynamic_tasks') as dyn_tasks:
-            for i in range(10):
+            for i in range(1, int(Variable.get('task_number'))):
                 DummyOperator(task_id=f"dummy_task_{i}")
 
         start >> t1 >> dyn_tasks >> finish
